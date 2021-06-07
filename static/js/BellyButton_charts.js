@@ -73,7 +73,7 @@ function buildCharts(sample) {
     var sample_values = firstSample.sample_values;
 
     // 3. Create a variable that holds the washing frequency.
-    var wfreq = filterMetadata[sample].wfreq;
+    var wfreq = firstMetaSample.wfreq;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -126,7 +126,7 @@ function buildCharts(sample) {
     // https://plotly.com/javascript/gauge-charts/
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
-      value: filterMetadata,
+      value: wfreq,
       type: "indicator",
       mode: "gauge+number",
       title: {text: ""},
@@ -137,8 +137,11 @@ function buildCharts(sample) {
         borderwidth: 2,
         bordercolor: "gray",
         steps: [
-          { range: [0, 250], color: "cyan" },
-          { range: [250, 400], color: "royalblue" }
+          { range: [0, 2], color: "red" },
+          { range: [2, 4], color: "orange" },
+          { range: [4, 6], color: "yellow" },
+          { range: [6, 8], color: "lightgreen" },
+          { range: [8, 10], color: "darkgreen" }
         ]
       }
     }];
