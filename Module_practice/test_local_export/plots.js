@@ -9,7 +9,7 @@
 // var topFiveCityNames = topFiveCities.map(city => city.City);
 // var topFiveCityGrowths = topFiveCities.map(city => parseInt(city.Increase_from_2016));
 
-// // Use Plotly to create a bar chart with these arrays.
+// // Use Plotly to create a BAR chart with these arrays.
 // var trace = {
 //     x: topFiveCityNames,
 //     y: topFiveCityGrowths,
