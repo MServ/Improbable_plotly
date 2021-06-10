@@ -107,17 +107,19 @@ function buildCharts(sample) {
     var bubbleData = [{
       x: otu_ids,
       y: sample_values,
+      mode: "markers",
       marker: {
         size: sample_values,
-        color: otu_ids
-      },
-      text: otu_labels,
-      type="bubble"
+        color: otu_ids,
+        colorscale: "Earth"
+      }
+      // text: otu_labels
     }];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-      title: "Bacteria Cultures per Sample"
+      title: "Bacteria Cultures per Sample",
+      xaxis: {title: "OTU ID"}
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -130,9 +132,9 @@ function buildCharts(sample) {
       value: wfreq,
       type: "indicator",
       mode: "gauge+number",
-      title: {text: ""},
+      title: {text: "Belly Button Washing Frequency <br> Scrubs per Week"},
       gauge: {
-        axis: { range: [null, 500], tickwidth: 1, tickcolor: "darkblue" },
+        axis: { range: [null, 10], tickwidth: 1, tickcolor: "darkblue" },
         bar: { color: "darkblue" },
         bgcolor: "white",
         borderwidth: 2,
