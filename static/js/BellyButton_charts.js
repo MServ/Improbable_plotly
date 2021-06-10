@@ -111,7 +111,8 @@ function buildCharts(sample) {
         size: sample_values,
         color: otu_ids
       },
-      text: otu_labels
+      text: otu_labels,
+      type="bubble"
     }];
 
     // 2. Create the layout for the bubble chart.
